@@ -36,8 +36,9 @@ public class Good {
             case "Aged Brie":
                 currentQuality = this.quality + days;
                 break;
-            default: currentQuality = 0;
+            default:
+                currentQuality = 0;
         }
-        return Math.max(currentQuality, 0);
+        return Math.min(Math.max(currentQuality, 0), 50);
     }
 }
