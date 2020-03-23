@@ -32,4 +32,17 @@ public class GoodTests {
         assertEquals(50, good.getQuality());
     }
 
+    @Test
+    void should_get_quality_less_than_init_when_time_goes_by_given_normal_good() {
+        // given
+        int days = 10;
+        Good good = new Good(20, 30, "normal");
+
+        // when
+        int result = good.getCurrentQuality(10);
+
+        // then
+        assertEquals(20, result);
+    }
+
 }

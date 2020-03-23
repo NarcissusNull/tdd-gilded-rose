@@ -8,6 +8,10 @@ public class Good {
         setQuality(quality);
     }
 
+    public Good(int sellIn, int quality, String type) {
+
+    }
+
     public int getQuality() {
         return quality;
     }
@@ -16,4 +20,7 @@ public class Good {
         this.quality = Math.min(Math.max(quality, 0), 50);
     }
 
+    public int getCurrentQuality(int days) {
+        return 0;
+    }
 }
