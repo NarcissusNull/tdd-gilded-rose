@@ -57,4 +57,18 @@ public class GoodTests {
         // then
         assertEquals(0, result);
     }
+
+    @Test
+    void should_reduce_quality_by_double_speed_when_time_goes_by_given_normal_good_and_dsys_more_than_sellIn() {
+        // given
+        int days = 10;
+        Good good = new Good(5, 30, "normal");
+
+        // when
+        int result = good.getCurrentQuality(days);
+
+        // then
+        assertEquals(15, result);
+    }
+
 }
