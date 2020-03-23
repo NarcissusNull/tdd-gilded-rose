@@ -71,4 +71,16 @@ public class GoodTests {
         assertEquals(15, result);
     }
 
+    @Test
+    void should_not_change_quality_when_time_goes_by_given_type_is_Sulfuras() {
+        // given
+        int days = 10;
+        Good good = new Good(20, 30, "Sulfuras");
+
+        // when
+        int result = good.getCurrentQuality(days);
+
+        // then
+        assertEquals(30, result);
+    }
 }
