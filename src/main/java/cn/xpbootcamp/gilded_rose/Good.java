@@ -13,10 +13,7 @@ public class Good {
     }
 
     public void setQuality(int quality) {
-        this.quality = quality;
-        if (this.quality < 0) {
-            this.quality = 0;
-        }
+        this.quality = Math.max(quality, 0);
     }
 
 }
