@@ -27,11 +27,7 @@ public class Good {
     public int getCurrentQuality(int days) {
         int currentQuality = 0;
         if ("normal".equals(type)) {
-            if (days <= sellIn) {
-                currentQuality = this.quality - days;
-            } else {
-                currentQuality = this.quality - sellIn - 2 * (days - sellIn);
-            }
+            currentQuality = this.quality - days - Math.max(days - sellIn, 0);
         }
         return Math.max(currentQuality, 0);
     }
