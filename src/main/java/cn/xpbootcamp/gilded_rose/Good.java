@@ -37,7 +37,7 @@ public class Good {
                 currentQuality = this.quality + days;
                 break;
             case "Backstage pass":
-                currentQuality = this.quality + days + Math.max(days + 10 - sellIn, 0);
+                currentQuality = this.quality + days + Math.max(days + 10 - sellIn, 0) + Math.max(days + 5 - sellIn, 0);
                 break;
             default:
                 currentQuality = 0;
