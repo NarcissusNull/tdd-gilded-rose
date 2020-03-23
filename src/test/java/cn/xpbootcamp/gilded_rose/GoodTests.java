@@ -39,7 +39,7 @@ public class GoodTests {
         Good good = new Good(20, 30, "normal");
 
         // when
-        int result = good.getCurrentQuality(10);
+        int result = good.getCurrentQuality(days);
 
         // then
         assertEquals(20, result);
