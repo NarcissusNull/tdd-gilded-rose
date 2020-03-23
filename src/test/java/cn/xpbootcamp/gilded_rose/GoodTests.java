@@ -148,4 +148,17 @@ public class GoodTests {
         // then
         assertEquals(36, result);
     }
+
+    @Test
+    void should_set_current_quality_0_when_time_goes_by_given_type_is_Backstage_pass_and_Performance_day_is_over() {
+        // given
+        int days = 21;
+        Good good = new Good(20, 10, "Backstage pass");
+
+        // when
+        int result = good.getCurrentQuality(days);
+
+        // then
+        assertEquals(0, result);
+    }
 }
