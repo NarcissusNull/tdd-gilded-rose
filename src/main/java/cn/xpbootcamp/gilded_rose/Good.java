@@ -25,13 +25,18 @@ public class Good {
     }
 
     public int getCurrentQuality(int days) {
-        int currentQuality = 0;
-        if ("normal".equals(type)) {
-            currentQuality = this.quality - days - Math.max(days - sellIn, 0);
-        } else if("Sulfuras".equals(type)) {
-            currentQuality = this.quality;
-        } else if("Aged Brie".equals(type)) {
-            currentQuality = this.quality + days;
+        int currentQuality;
+        switch (type) {
+            case "normal":
+                currentQuality = this.quality - days - Math.max(days - sellIn, 0);
+                break;
+            case "Sulfuras":
+                currentQuality = this.quality;
+                break;
+            case "Aged Brie":
+                currentQuality = this.quality + days;
+                break;
+            default: currentQuality = 0;
         }
         return Math.max(currentQuality, 0);
     }
