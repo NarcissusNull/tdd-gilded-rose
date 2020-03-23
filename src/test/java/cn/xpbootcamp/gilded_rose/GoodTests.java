@@ -45,4 +45,16 @@ public class GoodTests {
         assertEquals(20, result);
     }
 
+    @Test
+    void should_set_current_quality_0_when_get_current_quality_given_quality_less_than_0() {
+        // given
+        int days = 10;
+        Good good = new Good(20, 5, "normal");
+
+        // when
+        int result = good.getCurrentQuality(days);
+
+        // then
+        assertEquals(0, result);
+    }
 }
