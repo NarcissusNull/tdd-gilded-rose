@@ -3,13 +3,17 @@ package cn.xpbootcamp.gilded_rose;
 public class Good {
 
     private int quality;
+    private int sellIn;
+    private String type;
 
     public Good(int quality) {
         setQuality(quality);
     }
 
     public Good(int sellIn, int quality, String type) {
-
+        this.setQuality(quality);
+        this.sellIn = sellIn;
+        this.type = type;
     }
 
     public int getQuality() {
@@ -21,6 +25,10 @@ public class Good {
     }
 
     public int getCurrentQuality(int days) {
-        return 0;
+        int currentQuality = 0;
+        if ("normal".equals(type)) {
+            currentQuality = this.quality - days;
+        }
+        return currentQuality;
     }
 }
