@@ -110,4 +110,18 @@ public class GoodTests {
         assertEquals(50, result);
     }
 
+    @Test
+    void should_get_quality_more_than_init_when_time_goes_by_given_type_is_Backstage_pass_and_time_before_Performance_day_more_10_days() {
+        // given
+        int days = 10;
+        Good good = new Good(30, 10, "Backstage pass");
+
+        // when
+        int result = good.getCurrentQuality(days);
+
+        // then
+        assertEquals(20, result);
+    }
+
+
 }
