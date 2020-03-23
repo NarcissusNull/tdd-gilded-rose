@@ -36,6 +36,9 @@ public class Good {
             case "Aged Brie":
                 currentQuality = this.quality + days;
                 break;
+            case "Backstage pass":
+                currentQuality = this.quality + days;
+                break;
             default:
                 currentQuality = 0;
         }
