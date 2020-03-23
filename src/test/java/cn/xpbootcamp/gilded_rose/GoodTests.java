@@ -83,4 +83,17 @@ public class GoodTests {
         // then
         assertEquals(30, result);
     }
+
+    @Test
+    void should_get_quality_more_than_init_when_time_goes_by_given_type_is_Aged_Brie() {
+        // given
+        int days = 10;
+        Good good = new Good(20, 30, "Aged Brie");
+
+        // when
+        int result = good.getCurrentQuality(days);
+
+        // then
+        assertEquals(40, result);
+    }
 }
