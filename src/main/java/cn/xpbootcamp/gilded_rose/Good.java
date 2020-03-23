@@ -30,6 +30,8 @@ public class Good {
             currentQuality = this.quality - days - Math.max(days - sellIn, 0);
         } else if("Sulfuras".equals(type)) {
             currentQuality = this.quality;
+        } else if("Aged Brie".equals(type)) {
+            currentQuality = this.quality + days;
         }
         return Math.max(currentQuality, 0);
     }
