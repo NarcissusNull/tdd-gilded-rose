@@ -29,6 +29,6 @@ public class Good {
         if ("normal".equals(type)) {
             currentQuality = this.quality - days;
         }
-        return currentQuality;
+        return Math.max(currentQuality, 0);
     }
 }
