@@ -28,6 +28,8 @@ public class Good {
         int currentQuality = 0;
         if ("normal".equals(type)) {
             currentQuality = this.quality - days - Math.max(days - sellIn, 0);
+        } else if("Sulfuras".equals(type)) {
+            currentQuality = this.quality;
         }
         return Math.max(currentQuality, 0);
     }
