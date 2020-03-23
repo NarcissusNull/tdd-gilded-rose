@@ -136,4 +136,16 @@ public class GoodTests {
         assertEquals(28, result);
     }
 
+    @Test
+    void should_rise_quality_3_each_day_when_time_goes_by_given_type_is_Backstage_pass_and_time_before_Performance_day_less_than_5_days() {
+        // given
+        int days = 17;
+        Good good = new Good(20, 10, "Backstage pass");
+
+        // when
+        int result = good.getCurrentQuality(days);
+
+        // then
+        assertEquals(36, result);
+    }
 }
